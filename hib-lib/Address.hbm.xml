@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+   <class name="test.Address" table="address">
+      <meta attribute="class-description">
+         This class contains the employee address detail. 
+      </meta>
+      <id name="id" type="int" column="id">
+         <generator class="native"/>
+      </id>
+      <property name="street" column="street" type="string"/>
+      <property name="city" column="city" type="string"/>
+      <property name="state" column="state" type="string"/>
+   </class>
+</hibernate-mapping>

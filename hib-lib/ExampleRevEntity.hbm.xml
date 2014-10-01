@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping package="test">
+   <class name="test.ExampleRevEntity" table="audit_revision_info">
+      <meta attribute="class-description">
+         This class contains the envers audit revision information detail. 
+      </meta>
+      <id name="rev_id" type="int" column="rev_id">
+         <generator class="native"/>
+      </id>
+      <property name="rev_timestamp" column="rev_timestamp" type="long"/>
+      <property name="username" column="username" type="string"/>
+   </class>
+</hibernate-mapping>
