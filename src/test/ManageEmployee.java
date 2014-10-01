@@ -27,10 +27,14 @@ public class ManageEmployee {
          System.err.println("Failed to create sessionFactory object." + ex);
          throw new ExceptionInInitializerError(ex); 
       }
+      DemoObserver demoObserver=new DemoObserver();
+      NotificationManager manager=NotificationManager.getInstance();
+      manager.registerObserver(demoObserver);
       ManageEmployee ME = new ManageEmployee();
       Address addr1=new Address("jm road", "pune", "maharashtra");
       Integer emp1=ME.addEmployee("john", "travolta", 50000, addr1);
       ME.updateEmployee(emp1, 4000);
+      
       factory.close();
    }
    /* Method to CREATE an employee in the database */

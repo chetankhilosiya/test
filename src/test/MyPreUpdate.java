@@ -29,12 +29,8 @@ public class MyPreUpdate implements PreUpdateEventListener{
 			LinkedList<Object> newTemp=new LinkedList<Object>(Arrays.asList(newState));
 			newTemp.addFirst(id);
 			newState=newTemp.toArray();
-			for(Object x:oldState)	System.out.println(x);
-			for(Object x:newState)	System.out.println(x);
-			
-			//newobject and oldobject is collected.
-			//TODO call notification manager to notify registered observers.
-			
+			NotificationManager manager=NotificationManager.getInstance();
+			manager.notifyObservers(event.getEntityName(), oldState, newState);			
 		}
 		return false;		//return true if update should not perform
 	}
